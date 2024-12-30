@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <style>
+          body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1{
+            color: #333;
+            text-align: center;
+        }
+        form{
+            max-width: 500px;
+            margin:0 auto;
+            padding:20px;
+            background:#fff;
+            border:1px solid #ccc;
+            border-radius: 5px;
+    
+        }
+
+        form label{
+            font-weight: bold;
+            display: block;
+            margin:10px 0 5px;
+        }
+        form input,form textarea, form button{
+            width:100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border:1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button:hover{
+            background-color: #0056b3;
+        }
+        form button{
+            background-color: #007bff;
+            color:white;
+            cursor:pointer
+        }
+        a{
+            display:inline-block;
+            margin:20px auto;
+            padding:10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        a :hover{
+            background-color: #0056b3;
+        }   
+    </style>
+</head>
+<body>
+    <h1><strong>Todo Project - Update Task</strong></h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Update Task</button>
+    </form>
+    <a href="{% url 'home' %}">Back To Home</a>
+</body>
+</html>
