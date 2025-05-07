@@ -84,7 +84,8 @@
                     <td>{{ task.description }}</td>
                     <td>{{ task.due_date }}</td>
                     <td>
-                        <form method="POST" action="{% url 'delete_task' task.id %}" style="display:inline;">
+                        <form method="POST" action="{% url 'delete_task' task.id %}" 
+                        style="display:inline;">
                             {% csrf_token %}
                             <button type="submit">Delete</button>
                         </form>
